@@ -1,0 +1,3 @@
+[submodule "plugins/JsFormat"]
+	path = plugins/JsFormat
+	url = https://github.com/jdc0589/JsFormat.git
