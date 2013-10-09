@@ -9,7 +9,7 @@ import cssformatter
 
 class WebSuiteEventListener(sublime_plugin.EventListener):
   def on_pre_save(self, view):
-    if(s.get("format_on_save") == True && is_supported(self.view)):
+    if(s.get("format_on_save") == True and is_supported(view)):
       view.run_command("web_suite_format")
 
 

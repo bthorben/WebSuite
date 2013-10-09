@@ -1,6 +1,5 @@
 import sublime, sublime_plugin, re, sys, os, json
 
-
 directory = os.path.dirname(os.path.realpath(__file__))
 libs_path = os.path.join(directory, "libs")
 is_py2k = sys.version_info < (3, 0)
@@ -31,7 +30,8 @@ def add_lib_path(lib_path):
 add_lib_path(libs_path)
 
 # if you don't explicitly import jsbeautifier.unpackers here things will bomb out,
-# even though we don't use it directly.....
+# even though we don't use it directly ...
+import cssformat
 import jsbeautifier.unpackers
 import merge_utils
 

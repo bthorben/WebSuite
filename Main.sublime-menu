@@ -1,83 +1,70 @@
-[
-    {
-        "caption": "Preferences",
-        "mnemonic": "n",
-        "id": "preferences",
-        "children":
-        [
-            {
-                "caption": "Package Settings",
-                "mnemonic": "P",
-                "id": "package-settings",
-                "children":
-                [
-                    {
-                        "caption": "SublimeWebSuite",
-                        "children":
-                        [
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/WebSuit/websuit.sublime-settings"},
-                                "caption": "Settings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/User/websuit.sublime-settings"},
-                                "caption": "Settings – User"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/WebSuit/Default (Windows).sublime-keymap",
-                                    "platform": "Windows"
-                                },
-                                "caption": "Key Bindings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/WebSuit/Default (OSX).sublime-keymap",
-                                    "platform": "OSX"
-                                },
-                                "caption": "Key Bindings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/WebSuit/Default (Linux).sublime-keymap",
-                                    "platform": "Linux"
-                                },
-                                "caption": "Key Bindings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
-                                    "platform": "Windows"
-                                },
-                                "caption": "Key Bindings – User"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
-                                    "platform": "OSX"
-                                },
-                                "caption": "Key Bindings – User"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/User/Default (Linux).sublime-keymap",
-                                    "platform": "Linux"
-                                },
-                                "caption": "Key Bindings – User"
-                            },
-                            { "caption": "-" }
-                        ]
-                    }
-                ]
-            }
-        ]
-    }
-]
+[{
+  "caption": "Preferences",
+  "mnemonic": "n",
+  "id": "preferences",
+  "children": [{
+    "caption": "Package Settings",
+    "mnemonic": "P",
+    "id": "package-settings",
+    "children": [{
+      "caption": "SublimeWebSuitee",
+      "children": [{
+        "command": "open_file",
+        "args": {
+          "file": "${packages}/WebSuite/websuite.sublime-settings"
+        },
+        "caption": "Settings – Default"
+      }, {
+        "command": "open_file",
+        "args": {
+          "file": "${packages}/User/websuite.sublime-settings"
+        },
+        "caption": "Settings – User"
+      }, {
+        "command": "open_file",
+        "args": {
+          "file": "${packages}/WebSuite/Default (Windows).sublime-keymap",
+          "platform": "Windows"
+        },
+        "caption": "Key Bindings – Default"
+      }, {
+        "command": "open_file",
+        "args": {
+          "file": "${packages}/WebSuite/Default (OSX).sublime-keymap",
+          "platform": "OSX"
+        },
+        "caption": "Key Bindings – Default"
+      }, {
+        "command": "open_file",
+        "args": {
+          "file": "${packages}/WebSuite/Default (Linux).sublime-keymap",
+          "platform": "Linux"
+        },
+        "caption": "Key Bindings – Default"
+      }, {
+        "command": "open_file",
+        "args": {
+          "file": "${packages}/User/Default (Windows).sublime-keymap",
+          "platform": "Windows"
+        },
+        "caption": "Key Bindings – User"
+      }, {
+        "command": "open_file",
+        "args": {
+          "file": "${packages}/User/Default (OSX).sublime-keymap",
+          "platform": "OSX"
+        },
+        "caption": "Key Bindings – User"
+      }, {
+        "command": "open_file",
+        "args": {
+          "file": "${packages}/User/Default (Linux).sublime-keymap",
+          "platform": "Linux"
+        },
+        "caption": "Key Bindings – User"
+      }, {
+        "caption": "-"
+      }]
+    }]
+  }]
+}]
