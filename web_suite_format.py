@@ -1,5 +1,5 @@
 import sublime, sublime_plugin
-from web_suite_common import get_type, is_supported, augment_options, sublime_plugin, s
+from web_suite_common import get_type, is_supported, s
 
 import jsbeautifier.unpackers
 import merge_utils
@@ -17,12 +17,6 @@ class WebSuiteFormatCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     if(is_supported(self.view) == False):
       return
-
-    settings = self.view.settings()
-    opts = jsbeautifier.default_options()
-    opts.indent_char = " " if settings.get("translate_tabs_to_spaces") else "\t"
-    opts.indent_size = int(settings.get("tab_size")) if opts.indent_char == " " else 1
-    opts = augment_options(opts, s)
 
     t = get_type(self.view)
     f = None

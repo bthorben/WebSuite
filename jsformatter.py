@@ -1,4 +1,5 @@
 import sublime, sublime_plugin
+from web_suite_common import augment_options, s
 import jsbeautifier.unpackers
 import merge_utils
 
@@ -11,10 +12,16 @@ class JsFormatter:
     selection = self.view.sel()[0]
     formatSelection = len(selection) > 0
 
+    settings = self.view.settings()
+    opts = jsbeautifier.default_options()
+    opts.indent_char = " " if settings.get("translate_tabs_to_spaces") else "\t"
+    opts.indent_size = int(settings.get("tab_size")) if opts.indent_char == " " else 1
+    opts = augment_options(opts, s)
+
     if formatSelection:
-      format_selection(edit, opts)
+      self.format_selection(edit, opts)
     else:
-      format_whole_file(edit, opts)
+      self.format_whole_file(edit, opts)
 
   def format_selection(self, edit, opts):
     def get_line_indentation_pos(point):
