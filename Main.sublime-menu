@@ -17,18 +17,18 @@
                         [
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/JsFormat/JsFormat.sublime-settings"},
+                                "args": {"file": "${packages}/WebSuit/websuit.sublime-settings"},
                                 "caption": "Settings – Default"
                             },
                             {
                                 "command": "open_file",
-                                "args": {"file": "${packages}/User/JsFormat.sublime-settings"},
+                                "args": {"file": "${packages}/User/websuit.sublime-settings"},
                                 "caption": "Settings – User"
                             },
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/JsFormat/Default (Windows).sublime-keymap",
+                                    "file": "${packages}/WebSuit/Default (Windows).sublime-keymap",
                                     "platform": "Windows"
                                 },
                                 "caption": "Key Bindings – Default"
@@ -36,7 +36,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/JsFormat/Default (OSX).sublime-keymap",
+                                    "file": "${packages}/WebSuit/Default (OSX).sublime-keymap",
                                     "platform": "OSX"
                                 },
                                 "caption": "Key Bindings – Default"
@@ -44,7 +44,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/JsFormat/Default (Linux).sublime-keymap",
+                                    "file": "${packages}/WebSuit/Default (Linux).sublime-keymap",
                                     "platform": "Linux"
                                 },
                                 "caption": "Key Bindings – Default"
