@@ -1,21 +1,28 @@
 import sublime, sublime_plugin
+import sys, os
+
+directory = os.path.dirname(os.path.realpath(__file__))
+if directory not in sys.path:
+  sys.path.append(directory)
+
 import jsbeautifier.unpackers
 import merge_utils
 
 class JsFormatter:
 
-  def __init__(self, view):
+  def __init__(self, view, settings):
      self.view = view
+     self.settings = settings
 
   def format(self, edit):
     selection = self.view.sel()[0]
     formatSelection = len(selection) > 0
 
-    settings = self.view.settings()
+    view_settings = self.view.settings()
     opts = jsbeautifier.default_options()
-    opts.indent_char = " " if settings.get("translate_tabs_to_spaces") else "\t"
-    opts.indent_size = int(settings.get("tab_size")) if opts.indent_char == " " else 1
-    opts = self.augment_options(opts, s)
+    opts.indent_char = " " if view_settings.get("translate_tabs_to_spaces") else "\t"
+    opts.indent_size = int(view_settings.get("tab_size")) if opts.indent_char == " " else 1
+    opts = self.augment_options(opts, self.settings)
 
     if formatSelection:
       self.format_selection(edit, opts)

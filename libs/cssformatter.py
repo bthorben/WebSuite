@@ -1,12 +1,19 @@
 import sublime, sublime_plugin
-import time
+import time, sys, os
+
+directory = os.path.dirname(os.path.realpath(__file__))
+if directory not in sys.path:
+  sys.path.append(directory)
+  
 import cssFormat
 import merge_utils
 
 class CssFormatter:
 
-  def __init__(self, view):
+  def __init__(self, view, settings):
     self.view = view
+    self.settings = settings
+
     self.opts = cssformat.CssFormatOptions()
     self.opts.end_with_newline = False
     self.opts.blank_line_above_comments = False

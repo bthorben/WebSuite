@@ -21,6 +21,7 @@ def add_libs_path():
   lib_path = _try_get_short_path(lib_path)
   if lib_path not in sys.path:
     sys.path.append(lib_path)
+add_libs_path()
 
 def get_type(view):
   fName = view.file_name()
@@ -51,7 +52,7 @@ def plugin_loaded():
 if is_py2k:
   plugin_loaded()
 
-add_libs_path()
+
 import jsformatter
 import cssformatter
 import htmlformatter
@@ -71,17 +72,14 @@ class WebSuiteFormatCommand(sublime_plugin.TextCommand):
     t = get_type(self.view)
     f = None
     if t == "js":
-      f = jsformatter.JsFormatter(self.view)
+      f = jsformatter.JsFormatter(self.view, s)
     elif t == "css":
-      f = cssformatter.CssFormatter(self.view)
+      f = cssformatter.CssFormatter(self.view, s)
     elif t == "html":
-      f = htmlformatter.HtmlFormatter(self.view)
+      f = htmlformatter.HtmlFormatter(self.view, s)
 
     if(f != None):
       f.format(edit)
 
   def is_enabled(self):
-    return is_supported(self.view)
-
-  def is_visible(self):
     return is_supported(self.view)
