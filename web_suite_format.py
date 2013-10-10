@@ -3,8 +3,10 @@ from web_suite_common import get_type, is_supported, s
 
 import jsbeautifier.unpackers
 import merge_utils
+import cssformat
 import jsformatter
 import cssformatter
+import htmlformatter
 
 
 class WebSuiteEventListener(sublime_plugin.EventListener):
@@ -20,10 +22,12 @@ class WebSuiteFormatCommand(sublime_plugin.TextCommand):
 
     t = get_type(self.view)
     f = None
-    if(t == "js"):
+    if t == "js":
       f = jsformatter.JsFormatter(self.view)
-    elif(t == "css"):
+    elif t == "css":
       f = cssformatter.CssFormatter(self.view)
+    elif t == "html":
+      f = htmlformatter.HtmlFormatter(self.view)
 
     if(f != None):
       f.format(edit)

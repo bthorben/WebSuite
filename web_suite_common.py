@@ -66,12 +66,12 @@ def get_type(view):
   if(syntaxPath != None):
     syntax = os.path.splitext(syntaxPath)[0].split('/')[-1].lower()
 
-  js = ext in ['js', 'json'] or "javascript" in syntax or "json" in syntax
-  css = ext in ['css'] or "css" in syntax
-  if js:
+  if ext in ['js', 'json'] or "javascript" in syntax or "json" in syntax:
     return "js"
-  if css:
+  if ext in ['css'] or "css" in syntax:
     return "css"
+  if ext in ['html', 'htm'] or "html" in syntax:
+    return "html"
 
 def is_supported(view):
-  return get_type(view) in ["js", "css"]
+  return get_type(view) in ["js", "css", "html"]
