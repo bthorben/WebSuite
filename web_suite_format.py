@@ -1,9 +1,6 @@
 import sublime, sublime_plugin
 from web_suite_common import get_type, is_supported, s
 
-import jsbeautifier.unpackers
-import merge_utils
-import cssformat
 import jsformatter
 import cssformatter
 import htmlformatter

@@ -1,14 +1,12 @@
 import sublime, sublime_plugin, re, sys, os, json
 
-directory = os.path.dirname(os.path.realpath(__file__))
-libs_path = os.path.join(directory, "libs")
 is_py2k = sys.version_info < (3, 0)
 
 
 # Python 2.x on Windows can't properly import from non-ASCII paths, so
 # this code added the DOC 8.3 version of the lib folder to the path in
 # case the user's username includes non-ASCII characters
-def add_lib_path(lib_path):
+def add_libs_path():
   def _try_get_short_path(path):
     path = os.path.normpath(path)
     if is_py2k and os.name == 'nt' and isinstance(path, unicode):
@@ -21,13 +19,13 @@ def add_lib_path(lib_path):
         if windll.kernel32.GetShortPathNameW(path, buf, len(buf)):
           path = buf.value
     return path
+  directory = os.path.dirname(os.path.realpath(__file__))
+  lib_path = os.path.join(directory, "libs")
   lib_path = _try_get_short_path(lib_path)
   if lib_path not in sys.path:
     sys.path.append(lib_path)
 
-# crazyness to get jsbeautifier.unpackers to actually import
-# with sublime's weird hackery of the path and module loading
-add_lib_path(libs_path)
+add_libs_path()
 
 # if you don't explicitly import jsbeautifier.unpackers here things will bomb out,
 # even though we don't use it directly ...
