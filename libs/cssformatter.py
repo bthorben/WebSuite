@@ -1,6 +1,6 @@
 import sublime, sublime_plugin
 import time
-import cssformat
+import cssFormat
 import merge_utils
 
 class CssFormatter:
