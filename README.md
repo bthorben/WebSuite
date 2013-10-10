@@ -15,6 +15,6 @@ It currenlty includes the following tools with changed settings:
 * Tries hard to keep your cursor at the position it was before you reformatted
 
 ##TODO
-[ ] Edge out corner cases in which we don't follow Google Style perfectly
-[ ] Sort CSS-Properties alphabetically as suggested in the Styleguide
-[ ] Make the HTML Formatter do more than just reindent
+* [ ] Edge out corner cases in which we don't follow Google Style perfectly
+* [ ] Sort CSS-Properties alphabetically as suggested in the Styleguide
+* [ ] Make the HTML Formatter do more than just reindent
