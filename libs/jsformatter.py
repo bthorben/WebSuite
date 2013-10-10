@@ -1,6 +1,5 @@
 import sublime, sublime_plugin
-from web_suite_common import augment_options, s
-from web_suite_common import add_libs_path
+from web_suite_format import add_libs_path, augment_options, s
 add_libs_path()
 
 import jsbeautifier.unpackers
