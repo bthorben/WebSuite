@@ -22,17 +22,6 @@ def add_libs_path():
   if lib_path not in sys.path:
     sys.path.append(lib_path)
 
-def augment_options(options, subset):
-  fields = [attr for attr in dir(options) if not callable(getattr(options, attr)) and not attr.startswith("__")]
-
-  for field in fields:
-    value = subset.get(field)
-    if value != None:
-      setattr(options, field, value)
-
-  return options
-
-
 def get_type(view):
   fName = view.file_name()
   vSettings = view.settings()

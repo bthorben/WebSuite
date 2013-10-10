@@ -15,12 +15,22 @@ class JsFormatter:
     opts = jsbeautifier.default_options()
     opts.indent_char = " " if settings.get("translate_tabs_to_spaces") else "\t"
     opts.indent_size = int(settings.get("tab_size")) if opts.indent_char == " " else 1
-    opts = augment_options(opts, s)
+    opts = self.augment_options(opts, s)
 
     if formatSelection:
       self.format_selection(edit, opts)
     else:
       self.format_whole_file(edit, opts)
+
+  def augment_options(self, options, subset):
+    fields = [attr for attr in dir(options) if not callable(getattr(options, attr)) and not attr.startswith("__")]
+
+    for field in fields:
+      value = subset.get(field)
+      if value != None:
+        setattr(options, field, value)
+
+    return options
 
   def format_selection(self, edit, opts):
     def get_line_indentation_pos(point):
