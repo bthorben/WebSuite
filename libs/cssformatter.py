@@ -1,7 +1,4 @@
 import sublime, sublime_plugin
-from web_suite_format import add_libs_path
-add_libs_path()
-
 import time
 import cssformat
 import merge_utils
