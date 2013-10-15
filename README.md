@@ -4,10 +4,6 @@ Sublime WebSuite
 WebSuite is meant to be a one-install solution for getting a good 
 CSS/JavaScript development environment
 
-It currenlty includes the following tools with changed settings:
-* JsFormat
-* CSSFormat
-
 ##Features
 * Format JS and CSS
 * Tries hard to keep your cursor at the position it was before you reformatted
