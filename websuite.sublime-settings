@@ -1,11 +1,18 @@
 {
-  // exposed jsbeautifier options
-  "indent_with_tabs": false,
+  // WebSuite options
+  "format_on_save": false,
+
+  // This plugin uses js-beautify. Check 
+  // https://github.com/einars/js-beautify 
+  // for information on the following options
+
+  // JavaScript options
   "preserve_newlines": true,
   "max_preserve_newlines": 4,
   "space_in_paren": false,
-  "jslint_happy": true,
-  "brace_style": "collapse",
+  "jslint_happy": false,
+  // brace_style: "collapse" | "expand" | "end-expand"
+  "brace_style": "collapse", 
   "keep_array_indentation": false,
   "keep_function_indentation": false,
   "eval_code": false,
@@ -14,6 +21,7 @@
   "e4x": false,
   "wrap_line_length": 80,
 
-  // jsformat options
-  "format_on_save": true
+  // CSS options
+  "separate_selectors": true,
+  "end_with_newline": true
 }
